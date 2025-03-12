@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triathlon</title>
+    <title>Toggle Switches</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,8 +20,23 @@
         }
         .switch-container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            margin: 0 0 30px;
+        }
+        .switch-row {
+            display: flex;
             align-items: center;
             gap: 10px;
+        }
+        .text-left {
+            color: red;
+            font-weight: bold;
+        }
+        .text-right {
+            color: green;
+            font-weight: bold;
         }
         .switch {
             position: relative;
@@ -62,37 +77,53 @@
         input:checked + .slider:before {
             transform: translateX(24px);
         }
+        .icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .icon:before{
+            color: #2196F3;
+            font-size: 1.4em;
+            position: relative;
+            left: 5px;
+        }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <div class="switch-container">
-            <span>Not so good</span>
-            <i class="fas fa-swimmer"></i>
-            <label class="switch">
-                <input type="checkbox" id="toggle1">
-                <span class="slider"></span>
-            </label>
-            <span>Very good</span>
+            <i class="fas fa-swimmer icon"></i>
+            <div class="switch-row">
+                <span class="text-left">Not so good</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle1">
+                    <span class="slider"></span>
+                </label>
+                <span class="text-right">Very good</span>
+            </div>
         </div>
         <div class="switch-container">
-            <span>Not so good</span>
-            <i class="fas fa-bicycle"></i>
-            <label class="switch">
-                <input type="checkbox" id="toggle2">
-                <span class="slider"></span>
-            </label>
-            <span>Very good</span>
+            <i class="fas fa-bicycle icon"></i>
+            <div class="switch-row">
+                <span class="text-left">Not so good</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle2">
+                    <span class="slider"></span>
+                </label>
+                <span class="text-right">Very good</span>
+            </div>
         </div>
         <div class="switch-container">
-            <span>Not so good</span>
-            <i class="fas fa-running"></i>
-            <label class="switch">
-                <input type="checkbox" id="toggle3">
-                <span class="slider"></span>
-            </label>
-            <span>Very good</span>
+            <i class="fas fa-running icon"></i>
+            <div class="switch-row">
+                <span class="text-left">Not so good</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle3">
+                    <span class="slider"></span>
+                </label>
+                <span class="text-right">Very good</span>
+            </div>
         </div>
     </div>
     <script>
